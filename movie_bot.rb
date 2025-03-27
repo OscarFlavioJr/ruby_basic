@@ -1,9 +1,9 @@
-movies =File.open("movies.txt", "r") do |file|
-    movies = file.readlines
-end
+movies = File.readlines("movies.txt",).map{ |movie| movie.chomp.strip }
+
+puts movies
 
 def recommend_movies(movies)
-    puts("Recomendo que você assista ao filme " + movies.sample)
+    puts("Recomendo que você assista ao filme:" + movies.sample)
 end
 
 input = ""
