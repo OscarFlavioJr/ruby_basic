@@ -1,15 +1,6 @@
-movies = [
-    "The Shawshank Redemption",
-    "The Godfather",
-    "The Dark Knight",
-    "The Lord of the Rings: The Return of the King",
-    "Pulp Fiction",
-    "Schindler's List",
-    "The Lord of the Rings: The Fellowship of the Ring",
-    "Forrest Gump",
-    "The Empire Strikes Back",
-    "The Lord of the Rings: The Two Towers"
-]
+movies =File.open("movies.txt", "r") do |file|
+    movies = file.readlines
+end
 
 def recommend_movies(movies)
     puts("Recomendo que você assista ao filme " + movies.sample)
